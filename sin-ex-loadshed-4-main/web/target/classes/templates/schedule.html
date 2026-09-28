@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Schedule</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div>
+    <div layout:fragment="contents">
+        <h1>Schedule</h1>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+            <tr>
+                <th>Day</th>
+                <th>Slot 1</th>
+                <th>Slot 2</th>
+                <th>Slot 3</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="day, dayStat : ${scheduleDisplay}">
+                <td>Day [[${dayStat.index + 1}]]</td>
+                <td th:text="${day[0]}"></td>
+                <td th:text="${day[1]}"></td>
+                <td th:text="${day[2]}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</body>
+</html>
